@@ -3,7 +3,7 @@ pipeline
     agent any
     stages
     {
-        stage('continuous download')
+        stage('Continuous Download')
         {
             steps
             {
@@ -11,21 +11,21 @@ pipeline
 
             }
         }
-        stage('continuos build')
+        stage('Continuos build')
         {
             steps
             {
                 sh 'mvn package'
             }
         }
-        stage('continuous deploy')
+        stage('Continuous deploy')
         {
             steps
             {
                 sh 'scp /home/ubuntu/.jenkins/workspace/decpipeline1/webapp/target/webapp.war ubuntu@172.31.23.14:/var/lib/tomcat9/webapps/Qae1.war'
             }
         }
-        stage('continous testing')
+        stage('Continous testing')
         {
             steps
             {
@@ -34,7 +34,7 @@ pipeline
                 
             }
         }
-        stage('continuous delivery')
+        stage('Continuous delivery')
         {
             steps
             {
